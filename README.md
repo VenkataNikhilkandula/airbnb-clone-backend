@@ -16,6 +16,35 @@ This is a backend system similar to Airbnb that allows property owners (hosts) t
 - JDK 17
 - Maven
 - MySQL
+src/main/java/com/example/airbnbclone
+
+├── controller
+│   ├── UserController
+│   ├── PropertyController
+│   ├── BookingController
+│   └── ReviewController
+│
+├── service
+│   ├── UserService
+│   ├── PropertyService
+│   ├── BookingService
+│   └── ReviewService
+│
+├── repository
+│   ├── UserRepository
+│   ├── PropertyRepository
+│   ├── BookingRepository
+│   └── ReviewRepository
+│
+├── entity
+│   ├── User
+│   ├── Property
+│   ├── Booking
+│   └── Review
+│
+├── dto
+├── exception
+└── config
 
 ## Setup Instructions
 1. Open MySQL and create a database named `airbnb_db`.
