@@ -46,16 +46,22 @@ src/main/java/com/example/airbnbclone
 ├── exception
 └── config
 
-## Setup Instructions
-1. Open MySQL and create a database named `airbnb_db`.
-   ```sql
-   CREATE DATABASE airbnb_db;
-   ```
-2. Check `src/main/resources/application.properties` and ensure `spring.datasource.username` and `spring.datasource.password` match your local MySQL credentials. The default is set to `root` / `root`.
-3. Open the project in Eclipse.
-4. Run the project as a Spring Boot App (`AirbnbCloneBackendApplication.java`).
-5. Hibernate will automatically create the tables on the first run.
 
+---
+
+## ⚙️ Database Configuration
+
+Update `application.properties`:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/airbnb_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+
+spring.datasource.username=root
+spring.datasource.password=root
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+-------------------------------------
 ## API Documentation
 Once the application is running, you can explore the APIs and test them via Swagger UI:
 - **Swagger UI**: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
