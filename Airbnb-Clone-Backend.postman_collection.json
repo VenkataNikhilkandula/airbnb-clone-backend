@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "c6a1b2c3-d4e5-f6a7-b8c9-d0e1f2a3b4c5",
+		"name": "Airbnb-Clone-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Register Host",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Host User\",\n    \"email\": \"host@example.com\",\n    \"password\": \"password123\",\n    \"role\": \"HOST\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Register Guest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Guest User\",\n    \"email\": \"guest@example.com\",\n    \"password\": \"password123\",\n    \"role\": \"GUEST\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Create Property (Host)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Beautiful Villa in Hyderabad\",\n    \"description\": \"A very nice place to stay.\",\n    \"location\": \"Hyderabad\",\n    \"pricePerNight\": 150.00,\n    \"hostId\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/properties",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Set Availability (Host)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"propertyId\": 1,\n    \"availableFrom\": \"2026-06-05\",\n    \"availableTo\": \"2026-12-31\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/properties/1/availability",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"properties",
+						"1",
+						"availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Get Properties",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/properties",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Create Booking (Guest)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"propertyId\": 1,\n    \"guestId\": 2,\n    \"startDate\": \"2026-06-10\",\n    \"endDate\": \"2026-06-12\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
